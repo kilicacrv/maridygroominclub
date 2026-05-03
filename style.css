@@ -461,14 +461,33 @@ footer p {
 @media (max-width: 992px) {
     .grid-3 { grid-template-columns: repeat(2, 1fr); }
     .grid-4 { grid-template-columns: repeat(2, 1fr); }
-    .hero h1 { font-size: 3rem; }
+    .hero h1 { font-size: 3.5rem; }
 }
 
 @media (max-width: 768px) {
+    .navbar { height: 70px; }
+    .navbar .container { padding: 0 15px; }
+    .logo { font-size: 14px; letter-spacing: 2px; }
+    .logo span { margin-left: 3px; }
+    
+    .btn { padding: 10px 20px; font-size: 12px; }
+    
+    .hero { text-align: center; }
+    .hero h1 { font-size: 2.2rem; margin-bottom: 15px; }
+    .hero p { font-size: 1rem; margin: 0 auto 30px; }
+    .hero-btns { flex-direction: column; width: 100%; max-width: 300px; margin: 0 auto; }
+    
     .grid-3, .grid-4 { grid-template-columns: 1fr; }
-    .hero h1 { font-size: 2.5rem; }
-    .hero-btns { flex-direction: column; }
-    .pricing-card.popular { transform: scale(1); }
-    .form-container { padding: 30px; }
-    .radio-group { flex-direction: column; gap: 10px; }
+    
+    .pricing-card.popular { transform: scale(1); margin: 20px 0; }
+    .form-container { padding: 30px 20px; }
+    
+    .visual-card { aspect-ratio: 1/1; }
+    
+    .section-padding { padding: 60px 0; }
+}
+
+@media (max-width: 480px) {
+    .hero h1 { font-size: 1.8rem; }
+    .logo { font-size: 12px; letter-spacing: 1px; }
 }
