@@ -63,17 +63,16 @@ h1, h2, h3 {
 }
 
 .logo {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
-    letter-spacing: 3px;
-    font-weight: 700;
-    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
 
-.logo span {
-    color: var(--accent);
-    font-weight: 300;
-    margin-left: 5px;
+.logo img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
 }
 
 /* Buttons */
@@ -467,8 +466,7 @@ footer p {
 @media (max-width: 768px) {
     .navbar { height: 70px; }
     .navbar .container { padding: 0 15px; }
-    .logo { font-size: 14px; letter-spacing: 2px; }
-    .logo span { margin-left: 3px; }
+    .logo img { height: 40px; }
     
     .btn { padding: 10px 20px; font-size: 12px; }
     
@@ -489,5 +487,5 @@ footer p {
 
 @media (max-width: 480px) {
     .hero h1 { font-size: 1.8rem; }
-    .logo { font-size: 12px; letter-spacing: 1px; }
+    .logo img { height: 35px; }
 }
