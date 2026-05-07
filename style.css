@@ -129,12 +129,13 @@ h1, h2, h3 {
 
 /* Hero */
 .hero {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Move text up to not cover the van */
     justify-content: center;
     position: relative;
-    background: url('luxury_van_dubai.png') center/cover no-repeat;
+    background: url('luxury_van_dubai.jpg') center bottom/cover no-repeat;
+    padding-top: 22vh; /* Push down past navbar */
 }
 
 .hero-overlay {
@@ -143,7 +144,8 @@ h1, h2, h3 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.4));
+    /* Darker at top for text readability, clearer at bottom to show van */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0.2) 100%);
 }
 
 .hero-content {
@@ -470,9 +472,13 @@ footer p {
     
     .btn { padding: 10px 20px; font-size: 12px; }
     
-    .hero { text-align: center; }
-    .hero h1 { font-size: 2.2rem; margin-bottom: 15px; }
-    .hero p { font-size: 1rem; margin: 0 auto 30px; }
+    .hero { 
+        text-align: center; 
+        padding-top: 15vh; /* Push text higher on mobile so van is fully visible */
+        background-position: center bottom;
+    }
+    .hero h1 { font-size: 2rem; margin-bottom: 15px; }
+    .hero p { font-size: 1rem; margin: 0 auto 20px; }
     .hero-btns { flex-direction: column; width: 100%; max-width: 300px; margin: 0 auto; }
     
     .grid-3, .grid-4 { grid-template-columns: 1fr; }
