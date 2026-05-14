@@ -516,7 +516,9 @@ footer p {
     .pricing-card.popular { transform: scale(1); margin: 20px 0; }
     .form-container { padding: 30px 20px; }
     
-    .visual-card { aspect-ratio: 1/1; }
+    .visual-card { aspect-ratio: 4/5; }
+    .visual-card h3 { bottom: 20px; left: 20px; font-size: 1.2rem; }
+    .visual-card::after { height: 40%; }
     
     .section-padding { padding: 60px 0; }
 }
