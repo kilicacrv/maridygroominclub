@@ -389,9 +389,150 @@ h1, h2, h3 {
     padding-bottom: 5px;
 }
 
-/* Application Form */
-.application {
+/* Apply Banner */
+.apply-banner-section {
     padding: 100px 0;
+    background: var(--bg);
+}
+
+.apply-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--surface);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid rgba(197, 160, 89, 0.2);
+    border-top: 2px solid var(--accent);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.apply-banner-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    flex-shrink: 0;
+    position: relative;
+}
+
+.apply-banner-icon::before {
+    content: '';
+    position: absolute;
+    width: 115%;
+    height: 115%;
+    border-radius: 50%;
+    border: 1px solid rgba(197, 160, 89, 0.4);
+}
+
+.apply-banner-text {
+    flex-grow: 1;
+    margin: 0 30px;
+}
+
+.apply-banner-text h2 {
+    font-size: 1.4rem;
+    color: var(--accent);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.apply-banner-text p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0;
+}
+
+.apply-banner-btn {
+    flex-shrink: 0;
+}
+
+.apply-banner-btn .btn {
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 15px 40px;
+}
+
+.apply-banner-btn .btn:hover {
+    background: var(--accent);
+    color: #000;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    z-index: 2001;
+    background: var(--surface);
+    border-radius: 12px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: modalSlideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes modalSlideIn {
+    from { opacity: 0; transform: translateY(30px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 28px;
+    cursor: pointer;
+    transition: var(--transition);
+    z-index: 10;
+}
+
+.modal-close:hover {
+    color: var(--accent);
+}
+
+.modal .form-container {
+    margin: 0;
+    border: none;
+    box-shadow: none;
+    padding: 40px;
+    max-width: 100%;
 }
 
 .form-container {
@@ -519,6 +660,24 @@ footer p {
     
     .pricing-card.popular { transform: scale(1); margin: 20px 0; }
     .form-container { padding: 30px 20px; }
+    
+    .apply-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+    .apply-banner-text {
+        margin: 20px 0;
+    }
+    .apply-banner-text h2 {
+        font-size: 1.2rem;
+    }
+    .apply-banner-btn {
+        width: 100%;
+    }
+    .apply-banner-btn .btn {
+        width: 100%;
+    }
     
     .visual-card .img-wrapper { aspect-ratio: 1/1; }
     

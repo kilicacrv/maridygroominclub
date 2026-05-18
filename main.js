@@ -28,6 +28,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Modal logic
+    const applyModal = document.getElementById('applyModal');
+    const openModalBtn = document.getElementById('openApplyModal');
+    const closeModalBtn = document.getElementById('closeApplyModal');
+    const modalBackdrop = document.querySelector('.modal-backdrop');
+
+    const openModal = () => {
+        if (applyModal) applyModal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    };
+
+    const closeModal = () => {
+        if (applyModal) applyModal.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
+    if (openModalBtn) openModalBtn.addEventListener('click', openModal);
+    if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+    if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
+
     // Form submission
     const form = document.getElementById('membershipForm');
     const submitBtn = form?.querySelector('button[type="submit"]');
@@ -66,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="text-center" style="padding: 40px 0;">
                         <h2 style="margin-bottom: 10px;">Application Received</h2>
                         <p style="color: var(--text-muted); margin-bottom: 30px;">Thank you, ${data.name}. Our concierge will contact you on WhatsApp shortly to discuss your membership.</p>
-                        <button onclick="location.reload()" class="btn btn-outline">Back</button>
+                        <button onclick="location.reload()" class="btn btn-outline">Close</button>
                     </div>
                 `;
             } catch (err) {
@@ -74,22 +94,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('Something went wrong. Please try again or contact us directly.');
                 if (submitBtn) {
                     submitBtn.disabled = false;
-                    submitBtn.innerText = 'Apply for Membership';
+                    submitBtn.innerText = 'Submit Application';
                 }
             }
         });
     }
 
-    // Smooth scroll for anchor links
+    // Smooth scroll for anchor links and trigger modal for #apply
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                window.scrollTo({
-                    top: target.offsetTop - 80,
-                    behavior: 'smooth'
-                });
+            const href = this.getAttribute('href');
+            
+            if (href === '#apply') {
+                openModal();
+            } else {
+                const target = document.querySelector(href);
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
             }
         });
     });

@@ -150,9 +150,29 @@
         </div>
     </section>
 
-    <section class="application" id="apply">
+    <section class="apply-banner-section" id="apply">
         <div class="container">
-            <div class="form-container reveal">
+            <div class="apply-banner reveal">
+                <div class="apply-banner-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
+                </div>
+                <div class="apply-banner-text">
+                    <h2>JOIN THE UAE'S MOST ELITE GROOMING CIRCLE</h2>
+                    <p>Limited memberships available for our exclusive launch.</p>
+                </div>
+                <div class="apply-banner-btn">
+                    <button class="btn btn-primary" id="openApplyModal">APPLY NOW</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Application Form -->
+    <div class="modal" id="applyModal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="closeApplyModal">&times;</button>
+            <div class="form-container">
                 <h2 class="text-center">Apply for Membership</h2>
                 <p class="text-center">Join the waitlist for UAE's first private mobile grooming club.</p>
                 <form id="membershipForm">
@@ -197,11 +217,11 @@
                             <option value="elite">Elite Plan</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block">Apply for Membership</button>
+                    <button type="submit" class="btn btn-primary btn-block">Submit Application</button>
                 </form>
             </div>
         </div>
-    </section>
+    </div>
 
     <footer>
         <div class="container text-center">
