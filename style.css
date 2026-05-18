@@ -298,6 +298,7 @@ h1, h2, h3 {
 .benefit-card .icon {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    color: var(--accent);
 }
 
 .benefit-card h3 {
