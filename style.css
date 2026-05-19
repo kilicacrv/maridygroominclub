@@ -655,20 +655,20 @@ footer p {
     }
     
     .pricing-carousel .pricing-card {
-        min-width: 75%;
-        margin: 0 -5%;
+        min-width: 65%;
+        margin: 0 -2%;
         scroll-snap-align: center;
         flex-shrink: 0;
         padding: 30px 15px;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        transform: scale(0.85);
-        opacity: 0.5;
+        transform: scale(0.9);
+        opacity: 0.75;
         z-index: 1;
         box-shadow: none;
     }
     
     .pricing-carousel .pricing-card.is-active {
-        transform: scale(1.05);
+        transform: scale(1);
         opacity: 1;
         z-index: 10;
         box-shadow: 0 20px 40px rgba(0,0,0,0.5);
@@ -735,7 +735,7 @@ footer p {
     .logo img { height: 40px; }
     
     .pricing-carousel .pricing-card {
-        min-width: 80%;
-        margin: 0 -8%;
+        min-width: 70%;
+        margin: 0 -4%;
     }
 }
