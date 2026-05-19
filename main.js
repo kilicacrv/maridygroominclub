@@ -119,14 +119,36 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-    // Scroll pricing carousel to popular plan on mobile
+    // Scroll pricing carousel to popular plan and add bowling pin effect
     const carousel = document.querySelector('.pricing-carousel');
-    const popularCard = document.querySelector('.pricing-card.popular');
-    if (carousel && popularCard && window.innerWidth <= 992) {
+    const carouselCards = document.querySelectorAll('.pricing-carousel .pricing-card');
+    
+    if (carousel && carouselCards.length > 0 && window.innerWidth <= 992) {
+        const observerOptions = {
+            root: carousel,
+            rootMargin: '0px',
+            threshold: 0.6 // Trigger when 60% of the card is visible
+        };
+
+        const carouselObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-active');
+                } else {
+                    entry.target.classList.remove('is-active');
+                }
+            });
+        }, observerOptions);
+
+        carouselCards.forEach(card => carouselObserver.observe(card));
+
         // Use setTimeout to ensure styles are applied
-        setTimeout(() => {
-            const scrollLeft = popularCard.offsetLeft - (carousel.clientWidth / 2) + (popularCard.clientWidth / 2);
-            carousel.scrollTo({ left: scrollLeft, behavior: 'instant' });
-        }, 100);
+        const popularCard = document.querySelector('.pricing-card.popular');
+        if (popularCard) {
+            setTimeout(() => {
+                const scrollLeft = popularCard.offsetLeft - (carousel.clientWidth / 2) + (popularCard.clientWidth / 2);
+                carousel.scrollTo({ left: scrollLeft, behavior: 'instant' });
+            }, 100);
+        }
     }
 });

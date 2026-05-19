@@ -643,11 +643,11 @@ footer p {
         display: flex;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
-        gap: 15px;
+        gap: 0;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none; /* Firefox */
         margin: 0 -20px;
-        padding: 20px 20px 40px 20px;
+        padding: 40px 0;
     }
     
     .pricing-carousel::-webkit-scrollbar {
@@ -655,10 +655,23 @@ footer p {
     }
     
     .pricing-carousel .pricing-card {
-        min-width: 60%;
+        min-width: 75%;
+        margin: 0 -5%;
         scroll-snap-align: center;
         flex-shrink: 0;
         padding: 30px 15px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: scale(0.85);
+        opacity: 0.5;
+        z-index: 1;
+        box-shadow: none;
+    }
+    
+    .pricing-carousel .pricing-card.is-active {
+        transform: scale(1.05);
+        opacity: 1;
+        z-index: 10;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.5);
     }
 }
 
@@ -722,7 +735,7 @@ footer p {
     .logo img { height: 40px; }
     
     .pricing-carousel .pricing-card {
-        min-width: 65%; /* slightly wider on very small screens to fit text, but still shows sides */
-        padding: 25px 15px;
+        min-width: 80%;
+        margin: 0 -8%;
     }
 }
