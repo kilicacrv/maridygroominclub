@@ -228,6 +228,10 @@ h1, h2, h3 {
     display: block;
 }
 
+.visual-card img.img-contain {
+    object-fit: contain;
+}
+
 .visual-card:hover img {
     transform: scale(1.05);
 }
