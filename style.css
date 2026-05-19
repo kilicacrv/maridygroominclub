@@ -42,7 +42,7 @@ h1, h2, h3 {
 
 /* Navbar */
 .navbar {
-    height: 80px;
+    height: 100px;
     display: flex;
     align-items: center;
     position: fixed;
@@ -70,7 +70,7 @@ h1, h2, h3 {
 }
 
 .logo img {
-    height: 50px;
+    height: 90px;
     width: auto;
     object-fit: contain;
 }
@@ -133,7 +133,7 @@ h1, h2, h3 {
     display: flex;
     align-items: stretch;
     background: var(--bg);
-    padding-top: 80px; /* Offset for fixed navbar */
+    padding-top: 100px; /* Offset for fixed navbar */
 }
 
 .hero-image {
@@ -635,15 +635,15 @@ footer p {
 }
 
 @media (max-width: 768px) {
-    .navbar { height: 70px; }
+    .navbar { height: 85px; }
     .navbar .container { padding: 0 15px; }
-    .logo img { height: 40px; }
+    .logo img { height: 75px; }
     
     .btn { padding: 10px 20px; font-size: 12px; }
     
     .hero {
         flex-direction: column;
-        padding-top: 70px;
+        padding-top: 85px;
     }
     .hero-image {
         width: 100%;
@@ -691,5 +691,5 @@ footer p {
 
 @media (max-width: 480px) {
     .hero h1 { font-size: 1.8rem; }
-    .logo img { height: 35px; }
+    .logo img { height: 65px; }
 }
