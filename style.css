@@ -655,9 +655,10 @@ footer p {
     }
     
     .pricing-carousel .pricing-card {
-        min-width: 85%;
+        min-width: 65%;
         scroll-snap-align: center;
         flex-shrink: 0;
+        padding: 30px 20px;
     }
 }
 

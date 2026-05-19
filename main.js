@@ -119,4 +119,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    // Scroll pricing carousel to popular plan on mobile
+    const carousel = document.querySelector('.pricing-carousel');
+    const popularCard = document.querySelector('.pricing-card.popular');
+    if (carousel && popularCard && window.innerWidth <= 992) {
+        // Use setTimeout to ensure styles are applied
+        setTimeout(() => {
+            const scrollLeft = popularCard.offsetLeft - (carousel.clientWidth / 2) + (popularCard.clientWidth / 2);
+            carousel.scrollTo({ left: scrollLeft, behavior: 'instant' });
+        }, 100);
+    }
 });
