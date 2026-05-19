@@ -325,6 +325,12 @@ h1, h2, h3 {
     margin-bottom: 60px;
 }
 
+.pricing-carousel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
 .pricing-card {
     background: var(--surface);
     padding: 50px 40px;
@@ -632,6 +638,27 @@ footer p {
     .grid-3 { grid-template-columns: repeat(2, 1fr); }
     .grid-4 { grid-template-columns: repeat(2, 1fr); }
     .hero h1 { font-size: 3.5rem; }
+    
+    .pricing-carousel {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 20px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+        margin: 0 -20px;
+        padding: 20px 20px 40px 20px;
+    }
+    
+    .pricing-carousel::-webkit-scrollbar {
+        display: none; /* Safari/Chrome */
+    }
+    
+    .pricing-carousel .pricing-card {
+        min-width: 85%;
+        scroll-snap-align: center;
+        flex-shrink: 0;
+    }
 }
 
 @media (max-width: 768px) {
